@@ -59,12 +59,12 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
 
 def build_graph(site_dropdown):
     if site_dropdown == 'ALL':
-        piechart = px.pie(data_frame = spacex_df, names='Launch Site', values='class' ,title='Total Launches for All Sites')
+        piechart = px.pie(data_frame = spacex_df, names='Launch Site', values='class' ,title='Total Success Launches for All Sites')
         return piechart
     else:
         #specific_df = spacex_df['Launch Site']
         specific_df=spacex_df.loc[spacex_df['Launch Site'] == site_dropdown]
-        piechart = px.pie(data_frame = specific_df, names='class',title='Total Launch for a Specific Site')
+        piechart = px.pie(data_frame = specific_df, names='class',title='Total Success Launch for a Specific Site')
         return piechart
 
 # TASK 4:
